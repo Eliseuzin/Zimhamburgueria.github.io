@@ -18,7 +18,23 @@ const Addresswarninput = document.getElementById("address-warn");
 // const Addressinput = Window.document.getElementById("address");
 // const Addresswarninput = Window.document.getElementById("address-warn");
 
+// abrir o carrinho
+
 Meucarrinho.addEventListener("click", function () {
   dentrodocarrinho.style.display = "block";
 });
-ww;
+
+//fechar o carrinho click fora
+dentrodocarrinho.addEventListener("click", function (event) {
+  if (event.target === dentrodocarrinho) {
+    dentrodocarrinho.style.display = "none";
+  }
+});
+
+//fechar carrinho click em fechar
+
+dentrodocarrinho.addEventListener("click", function (event) {
+  if (event.target === Fechar) {
+    dentrodocarrinho.style.display = "none";
+  }
+});
