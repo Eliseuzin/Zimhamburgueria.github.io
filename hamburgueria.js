@@ -31,7 +31,7 @@ dentrodocarrinho.addEventListener("click", function (event) {
   }
 });
 
-//fechar carrinho click em fechar
+//fechar carrinho no click em fechar
 
 dentrodocarrinho.addEventListener("click", function (event) {
   if (event.target === Fechar) {
