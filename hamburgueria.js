@@ -1,5 +1,5 @@
 const Menugeral = document.getElementById("menu");
-console.log(Menugeral);
+// console.log(Menugeral);
 const Meucarrinho = document.getElementById("meucarrinho");
 const dentrodocarrinho = document.getElementById("dentrodocarrinho");
 const Valortotal = document.getElementById("valortotal");
@@ -37,4 +37,10 @@ dentrodocarrinho.addEventListener("click", function (event) {
   if (event.target === Fechar) {
     dentrodocarrinho.style.display = "none";
   }
+});
+
+Menugeral.addEventListener("click", function (event) {
+  // console.log(event.target);
+  var parentButtom = event.target.closest(".addcart");
+  console.log(parentButtom);
 });
