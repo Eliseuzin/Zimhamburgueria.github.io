@@ -9,6 +9,7 @@ const Quantidadecarinho = document.getElementById("quantidadecarinho");
 const Addressinput = document.getElementById("address");
 const Addresswarninput = document.getElementById("address-warn");
 
+var listcar = [];
 // const Meuccarrinho = Window.document.getElementById("meucarrinho");
 // const dentrodocarinho = Window.document.getElementById("submeucarrinho");
 // const Valortotal = Window.document.getElementById("valortotal");
@@ -41,6 +42,38 @@ dentrodocarrinho.addEventListener("click", function (event) {
 
 Menugeral.addEventListener("click", function (event) {
   // console.log(event.target);
+
   var parentButtom = event.target.closest(".addcart");
-  console.log(parentButtom);
+
+  // console.log(parentButtom);
+
+  if (parentButtom) {
+    const name = parentButtom.getAttribute("data-name");
+    const price = parseFloat(parentButtom.getAttribute("data-price"));
+
+    // console.log(name);
+    // console.log(price);
+
+    //adicionar no carrinho
+
+    addinmycar(name, price);
+  }
 });
+
+// função para adicionar no carrinho
+function addinmycar(name, price) {
+  // alert(` item is ${name} and  price is ${price}`);
+
+  const checklistcar = listcar.find((item) => item.name === name);
+
+  if (checklistcar) {
+    //se o item já existe aumenta a quantidade +1
+    // console.log(checklistcar);
+    checklistcar.quantity += 1;
+  }
+  listcar.push({
+    name,
+    price,
+    quantity: 1,
+  });
+}
