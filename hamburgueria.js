@@ -2,6 +2,7 @@ const Menugeral = document.getElementById("menu");
 // console.log(Menugeral);
 const Meucarrinho = document.getElementById("meucarrinho");
 const dentrodocarrinho = document.getElementById("dentrodocarrinho");
+const submeucarrinho = document.getElementById("submeucarrinho");
 const Valortotal = document.getElementById("valortotal");
 const Fechar = document.getElementById("Fechar");
 const Finalizar = document.getElementById("Finalizar");
@@ -70,10 +71,53 @@ function addinmycar(name, price) {
     //se o item já existe aumenta a quantidade +1
     // console.log(checklistcar);
     checklistcar.quantity += 1;
+    // return;
+  } else {
+    listcar.push({
+      name,
+      price,
+      quantity: 1,
+    });
   }
-  listcar.push({
-    name,
-    price,
-    quantity: 1,
+
+  updatecarrinho();
+}
+
+//atualizar o carrinho
+function updatecarrinho() {
+  submeucarrinho.innerHTML = "";
+  var total = 0;
+
+  submeucarrinho.forEach((item) => {
+    const incluirosprodutos = document.createElement("div");
+
+    incluirosprodutos.innerHTML = `<div>
+    <div>
+        <p>${item.name}</p>
+        <p>${item.quantity}</p>
+        <p>R$:${item.price}</p>
+    </div>
+    <div>
+    <buttom>Remover</buttom>
+    
+    </div>
+    
+    </div>`;
+
+    submeucarrinho.appendChild(incluirosprodutos);
   });
+
+  // {
+  //   const incluirosprodutos= document.createElement("div")
+
+  //   incluirosprodutos.innerHTML=`<div>
+  //   <div>
+  //       <p>${item.name}</p>
+  //       <p></p>
+  //       <p></p>
+
+  //   </div>
+
+  //   </div>`
+  // };
 }
