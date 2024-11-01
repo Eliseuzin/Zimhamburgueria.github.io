@@ -79,45 +79,30 @@ function addinmycar(name, price) {
       quantity: 1,
     });
   }
-
   updatecarrinho();
 }
 
 //atualizar o carrinho
 function updatecarrinho() {
-  submeucarrinho.innerHTML = "";
-  var total = 0;
+  // submeucarrinho.innerHTML = "";
+  let total = 0;
 
-  submeucarrinho.forEach((item) => {
+  listcar.forEach((item) => {
     const incluirosprodutos = document.createElement("div");
 
     incluirosprodutos.innerHTML = `<div>
-    <div>
-        <p>${item.name}</p>
-        <p>${item.quantity}</p>
-        <p>R$:${item.price}</p>
-    </div>
-    <div>
-    <buttom>Remover</buttom>
-    
-    </div>
-    
+        <div>
+            <p>${item.name}</p>
+            <p>${item.quantity}</p>
+            <p>R$:${item.price}</p>
+        </div>
+
+        <div>
+        <buttom>Remover</buttom>
+        </div>
+
     </div>`;
 
     submeucarrinho.appendChild(incluirosprodutos);
   });
-
-  // {
-  //   const incluirosprodutos= document.createElement("div")
-
-  //   incluirosprodutos.innerHTML=`<div>
-  //   <div>
-  //       <p>${item.name}</p>
-  //       <p></p>
-  //       <p></p>
-
-  //   </div>
-
-  //   </div>`
-  // };
 }
