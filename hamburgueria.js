@@ -23,14 +23,16 @@ var listcar = [];
 // abrir o carrinho
 
 Meucarrinho.addEventListener("click", function () {
+  updatecarrinho();
   dentrodocarrinho.style.display = "block";
 });
 
-//fechar o carrinho click fora
+//fechar o carrinho, click fora
 dentrodocarrinho.addEventListener("click", function (event) {
   if (event.target === dentrodocarrinho) {
     dentrodocarrinho.style.display = "none";
   }
+
 });
 
 //fechar carrinho no click em fechar
@@ -84,7 +86,7 @@ function addinmycar(name, price) {
 
 //atualizar o carrinho
 function updatecarrinho() {
-  // submeucarrinho.innerHTML = "";
+  // submeucarrinho.innerHTML= "";
   let total = 0;
 
   listcar.forEach((item) => {
