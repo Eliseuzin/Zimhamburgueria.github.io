@@ -23,8 +23,11 @@ var listcar = [];
 // abrir o carrinho
 
 Meucarrinho.addEventListener("click", function () {
+  // submeucarrinho.innerHTML= "";
   updatecarrinho();
   dentrodocarrinho.style.display = "block";
+  // updatecarrinho();
+
 });
 
 //fechar o carrinho, click fora
@@ -105,6 +108,6 @@ function updatecarrinho() {
 
     </div>`;
 
-    submeucarrinho.appendChild(incluirosprodutos);
+    submeucarrinho.appendChild( incluirosprodutos);
   });
 }
