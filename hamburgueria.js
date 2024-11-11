@@ -9,6 +9,7 @@ const Finalizar = document.getElementById("Finalizar");
 const Quantidadecarinho = document.getElementById("quantidadecarinho");
 const Addressinput = document.getElementById("address");
 const Addresswarninput = document.getElementById("address-warn");
+const itensaddnocarrinho = document.getElementById("itensadd");
 
 var listcar = [];
 // const Meuccarrinho = Window.document.getElementById("meucarrinho");
@@ -24,10 +25,9 @@ var listcar = [];
 
 Meucarrinho.addEventListener("click", function () {
   // submeucarrinho.innerHTML= "";
-  updatecarrinho();
+  // updatecarrinho();
   dentrodocarrinho.style.display = "block";
   // updatecarrinho();
-
 });
 
 //fechar o carrinho, click fora
@@ -36,6 +36,7 @@ dentrodocarrinho.addEventListener("click", function (event) {
     dentrodocarrinho.style.display = "none";
   }
 
+  updatecarrinho();
 });
 
 //fechar carrinho no click em fechar
@@ -88,8 +89,9 @@ function addinmycar(name, price) {
 }
 
 //atualizar o carrinho
+
 function updatecarrinho() {
-  // submeucarrinho.innerHTML= "";
+  // submeucarrinho.innerHTML = "";
   let total = 0;
 
   listcar.forEach((item) => {
@@ -108,6 +110,9 @@ function updatecarrinho() {
 
     </div>`;
 
-    submeucarrinho.appendChild( incluirosprodutos);
+    submeucarrinho.appendChild(incluirosprodutos);
+    // incluirosprodutos.remove([div]);
   });
 }
+// let remoanterior = document.getElementsByTagName("div");
+// remoanterior.remove()
