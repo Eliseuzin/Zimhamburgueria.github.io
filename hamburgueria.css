@@ -199,6 +199,34 @@ footer > button {
   display: inline-block;
   justify-content: space-between;
   font-style: bold;
+  /* display: none; */
+}
+
+#subbottom {
+  display: inline-block;
+  justify-content: space-between;
+  font-style: bold;
+  /* display: none; */
+}
+
+#out {
+  border-radius: 5px;
+  padding: 5px;
+  font-family: "Courier New", "Courier", "monospace";
+  background-color: rgba(192, 12, 12, 0.548);
+  color: #ffffff99;
+}
+
+#Finish {
+  border-radius: 5px;
+  padding: 5px;
+  font-family: "Courier New", "Courier", "monospace";
+  background-color: rgba(24, 104, 24, 0.616);
+  color: #ffffff99;
+}
+#endpedido {
+  display: flex;
+  justify-content: space-between;
 }
 
 #address {

@@ -3,6 +3,7 @@ const Menugeral = document.getElementById("menu");
 const Meucarrinho = document.getElementById("meucarrinho");
 const dentrodocarrinho = document.getElementById("dentrodocarrinho");
 const submeucarrinho = document.getElementById("submeucarrinho");
+const subdentrodocarrinho = document.getElementById("subdentrodocarrinho");
 const Valortotal = document.getElementById("valortotal");
 const Fechar = document.getElementById("Fechar");
 const Finalizar = document.getElementById("Finalizar");
@@ -10,8 +11,11 @@ const Quantidadecarinho = document.getElementById("quantidadecarinho");
 const Addressinput = document.getElementById("address");
 const Addresswarninput = document.getElementById("address-warn");
 const itensaddnocarrinho = document.getElementById("itensadd");
+const subbottom = document.getElementById("subbottom");
+const out = document.getElementById("out");
 
 var listcar = [];
+subbottom.style.display = "none";
 // const Meuccarrinho = Window.document.getElementById("meucarrinho");
 // const dentrodocarinho = Window.document.getElementById("submeucarrinho");
 // const Valortotal = Window.document.getElementById("valortotal");
@@ -28,6 +32,7 @@ Meucarrinho.addEventListener("click", function () {
   // updatecarrinho();
   dentrodocarrinho.style.display = "block";
   // updatecarrinho();
+  // subbottom.style.display = "none";
 });
 
 //fechar o carrinho, click fora
@@ -35,9 +40,15 @@ dentrodocarrinho.addEventListener("click", function (event) {
   if (event.target === dentrodocarrinho) {
     dentrodocarrinho.style.display = "none";
   }
-
-  updatecarrinho();
 });
+//fim de outro teste
+
+subbottom.addEventListener("click", function (event) {
+  if (event.target === out) {
+    dentrodocarrinho.style.display = "none";
+  }
+});
+// updatecarrinho();
 
 //fechar carrinho no click em fechar
 
@@ -77,6 +88,7 @@ function addinmycar(name, price) {
     //se o item já existe aumenta a quantidade +1
     // console.log(checklistcar);
     checklistcar.quantity += 1;
+
     // return;
   } else {
     listcar.push({
@@ -86,12 +98,13 @@ function addinmycar(name, price) {
     });
   }
   updatecarrinho();
+  subbottom.style.display = "block";
 }
 
 //atualizar o carrinho
 
 function updatecarrinho() {
-  // submeucarrinho.innerHTML = "";
+  submeucarrinho.innerHTML = "";
   let total = 0;
 
   listcar.forEach((item) => {
@@ -111,8 +124,5 @@ function updatecarrinho() {
     </div>`;
 
     submeucarrinho.appendChild(incluirosprodutos);
-    // incluirosprodutos.remove([div]);
   });
 }
-// let remoanterior = document.getElementsByTagName("div");
-// remoanterior.remove()
