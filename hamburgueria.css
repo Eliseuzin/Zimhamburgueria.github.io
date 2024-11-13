@@ -263,3 +263,26 @@ footer > button {
   display: flex;
   justify-content: space-between;
 }
+
+.estilizarprodutos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.estilizarprodutos p {
+  /* display: flex;
+  justify-items: center; */
+  justify-content: space-between;
+  padding: 0px 7px;
+  width: 100%;
+  margin: 5px;
+}
+.estilizarprodutos div {
+  display: inline-block;
+}
+.estilizarprodutos buttom {
+  background-color: rgba(192, 12, 12, 0.548);
+  color: #ffffff99;
+  padding: 4px;
+  border-radius: 5px;
+}

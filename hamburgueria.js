@@ -109,6 +109,7 @@ function updatecarrinho() {
 
   listcar.forEach((item) => {
     const incluirosprodutos = document.createElement("div");
+    incluirosprodutos.setAttribute("class", "estilizarprodutos");
 
     // incluirosprodutos.style.display = "flex";
     // incluirosprodutos.style.justifyContent = "space between";
@@ -118,12 +119,12 @@ function updatecarrinho() {
     incluirosprodutos.innerHTML = `<div class="flex  items-center   justify-between">
         <div>
             <p>${item.name}</p>
-            <p>${item.quantity}</p>
+            <p> Qtds:${item.quantity}</p>
             <p>R$:${item.price}</p>
         </div>
-
-        <div>
+         <div>
         <buttom>Remover</buttom>
+
         </div>
         
     </div>`;
