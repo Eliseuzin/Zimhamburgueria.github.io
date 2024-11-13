@@ -134,4 +134,6 @@ function updatecarrinho() {
     style: "currency",
     currency: "BRL",
   })}`;
+
+  Quantidadecarinho.innerHTML = listcar.length;
 }
