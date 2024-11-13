@@ -124,16 +124,37 @@ function updatecarrinho() {
 
         </div>
 
-           <buttom>Remover</buttom>
+           <buttom class='removeritem' data-name=${item.name}>Remover</buttom>
       
     </div>`;
     total += item.price * item.quantity;
     submeucarrinho.appendChild(incluirosprodutos);
   });
+
+  //valor total do carrinho
   Valortotal.textContent = `Total: ${total.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   })}`;
 
   Quantidadecarinho.innerHTML = listcar.length;
+}
+
+// funçao para remover item
+submeucarrinho.addEventListener("click", function (event) {
+  if (event.target.classList.contains("removeritem")) {
+    const name = event.target.getAttribute("data-name");
+    // console.log(name);
+    //chamar funçao
+    removeritem(name);
+  }
+});
+
+function removeritem(name) {
+  const index = listcar.findIndex((item) => item.name === name);
+
+  if (index !== -1) {
+    const item = listcar[index];
+    console.log(item);
+  }
 }
