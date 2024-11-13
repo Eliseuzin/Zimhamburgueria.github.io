@@ -213,7 +213,7 @@ footer > button {
 
 #out {
   border-radius: 5px;
-  padding: 5px;
+  padding: 8px;
   font-family: "Courier New", "Courier", "monospace";
   background-color: rgba(192, 12, 12, 0.548);
   color: #ffffff99;
@@ -221,7 +221,7 @@ footer > button {
 
 #Finish {
   border-radius: 5px;
-  padding: 5px;
+  padding: 8px;
   font-family: "Courier New", "Courier", "monospace";
   background-color: rgba(24, 104, 24, 0.616);
   color: #ffffff99;

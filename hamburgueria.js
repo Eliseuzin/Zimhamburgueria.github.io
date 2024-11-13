@@ -117,20 +117,21 @@ function updatecarrinho() {
     // incluirosprodutos.style.background = "black";
 
     incluirosprodutos.innerHTML = `<div>
-        <article>
+        <div>
             <p>${item.name}</p>
             <p> Qtds:${item.quantity}</p>
-            <p>R$:${item.price}</p>
+            <p>R$:${item.price.toFixed(2)}</p>
 
-        </article>
+        </div>
 
            <buttom>Remover</buttom>
-
-
-     
-        
+      
     </div>`;
-
+    total += item.price * item.quantity;
     submeucarrinho.appendChild(incluirosprodutos);
   });
+  Valortotal.textContent = `Total: ${total.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
 }
