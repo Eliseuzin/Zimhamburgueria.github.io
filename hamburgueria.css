@@ -187,11 +187,13 @@ footer > button {
 
 #subdentrodocarrinho {
   color: aliceblue;
-  background-color: rgb(194, 113, 7);
+  background-color: #ffffff1c;
   padding: 10px;
   width: 90%;
   height: 90%;
   max-width: 450px;
+  border-radius: 20px;
+  border: solid 2px rgba(255, 0, 0, 0.363);
   /* min-width: 200px; */
 }
 
@@ -265,24 +267,28 @@ footer > button {
 }
 
 .estilizarprodutos {
-  display: flex;
-  justify-content: space-between;
+  /* background-color: pink; */
+  border-radius: 10px;
+  padding: 4px;
+  margin: 5px 0px;
 }
 
 .estilizarprodutos p {
-  /* display: flex;
-  justify-items: center; */
-  justify-content: space-between;
   padding: 0px 7px;
-  width: 100%;
   margin: 5px;
+  display: inline-block;
 }
 .estilizarprodutos div {
-  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
 }
 .estilizarprodutos buttom {
   background-color: rgba(192, 12, 12, 0.548);
   color: #ffffff99;
-  padding: 4px;
   border-radius: 5px;
+  padding: 7px;
+  width: cover;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

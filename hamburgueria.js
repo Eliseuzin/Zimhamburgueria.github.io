@@ -116,16 +116,18 @@ function updatecarrinho() {
     // incluirosprodutos.style.color = "red";
     // incluirosprodutos.style.background = "black";
 
-    incluirosprodutos.innerHTML = `<div class="flex  items-center   justify-between">
-        <div>
+    incluirosprodutos.innerHTML = `<div>
+        <article>
             <p>${item.name}</p>
             <p> Qtds:${item.quantity}</p>
             <p>R$:${item.price}</p>
-        </div>
-         <div>
-        <buttom>Remover</buttom>
 
-        </div>
+        </article>
+
+           <buttom>Remover</buttom>
+
+
+     
         
     </div>`;
 
