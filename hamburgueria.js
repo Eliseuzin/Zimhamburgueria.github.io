@@ -110,7 +110,12 @@ function updatecarrinho() {
   listcar.forEach((item) => {
     const incluirosprodutos = document.createElement("div");
 
-    incluirosprodutos.innerHTML = `<div>
+    // incluirosprodutos.style.display = "flex";
+    // incluirosprodutos.style.justifyContent = "space between";
+    // incluirosprodutos.style.color = "red";
+    // incluirosprodutos.style.background = "black";
+
+    incluirosprodutos.innerHTML = `<div class="flex  items-center   justify-between">
         <div>
             <p>${item.name}</p>
             <p>${item.quantity}</p>
@@ -120,7 +125,7 @@ function updatecarrinho() {
         <div>
         <buttom>Remover</buttom>
         </div>
-
+        
     </div>`;
 
     submeucarrinho.appendChild(incluirosprodutos);
