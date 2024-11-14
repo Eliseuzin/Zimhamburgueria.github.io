@@ -146,15 +146,20 @@ submeucarrinho.addEventListener("click", function (event) {
     const name = event.target.getAttribute("data-name");
     // console.log(name);
     //chamar funçao
-    removeritem(name);
+    removeritens(name);
   }
 });
 
-function removeritem(name) {
+function removeritens(name) {
   const index = listcar.findIndex((item) => item.name === name);
 
   if (index !== -1) {
     const item = listcar[index];
     console.log(item);
+
+    // if (item.quantity > 1) {
+    //   item.quantity -= 1;
+    //   updatecarrinho();
+    // }
   }
 }
