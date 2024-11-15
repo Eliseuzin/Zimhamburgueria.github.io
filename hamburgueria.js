@@ -146,20 +146,33 @@ submeucarrinho.addEventListener("click", function (event) {
     const name = event.target.getAttribute("data-name");
     // console.log(name);
     //chamar funçao
-    removeritens(name);
+    // removeritens(name);
+    remove();
   }
 });
 
-function removeritens(name) {
-  const index = listcar.findIndex((item) => item.name === name);
+// function removeritens(name) {
+//   const index = listcar.findIndex((item) => item.name === name);
 
-  if (index !== -1) {
-    const item = listcar[index];
-    console.log(item);
+//   if (index !== -1) {
+//     const item = listcar[index];
+//     console.log(item);
 
-    // if (item.quantity > 1) {
-    //   item.quantity -= 1;
-    //   updatecarrinho();
-    // }
+//     if (item.quantity > 1) {
+//       item.quantity -= 1;
+//       updatecarrinho();
+//     }
+//   }
+// }
+
+function remove(product) {
+  const foundprodutos = this.getProductIndex(product);
+  if (foundprodutos >= 0) {
+    if (this.listcar[foundprodutos].quantity <= 1) {
+      this.listcar.splice(foundprodutos, 1);
+    } else {
+      this.listcar[foundprodutos].quantity -= 1;
+    }
   }
+  console.log(this.listcar);
 }
