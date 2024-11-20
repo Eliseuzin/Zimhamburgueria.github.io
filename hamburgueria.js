@@ -75,6 +75,7 @@ Menugeral.addEventListener("click", function (event) {
     //adicionar no carrinho
 
     addinmycar(name, price);
+    // remoitenscarrinho(name);
   }
 });
 
@@ -147,9 +148,20 @@ submeucarrinho.addEventListener("click", function (event) {
     // console.log(name);
     //chamar funçao
     // removeritens(name);
-    remove();
+    // remove();
+    // remoitenscarrinho(name);
   }
 });
+
+// function remoitenscarrinho(name) {
+//   const checklistcarr = listcar.find((item) => item.name === name);
+
+//   if (checklistcarr) {
+//     checklistcarr.quantity -= 1;
+//   } else {
+//     listcar.splice(checklistcarr);
+//   }
+// }
 
 // function removeritens(name) {
 //   const index = listcar.findIndex((item) => item.name === name);
@@ -165,14 +177,14 @@ submeucarrinho.addEventListener("click", function (event) {
 //   }
 // }
 
-function remove(product) {
-  const foundprodutos = this.getProductIndex(product);
-  if (foundprodutos >= 0) {
-    if (this.listcar[foundprodutos].quantity <= 1) {
-      this.listcar.splice(foundprodutos, 1);
-    } else {
-      this.listcar[foundprodutos].quantity -= 1;
-    }
-  }
-  console.log(this.listcar);
-}
+// function remove(product) {
+//   const foundprodutos = this.getProductIndex(product);
+//   if (foundprodutos >= 0) {
+//     if (this.listcar[foundprodutos].quantity <= 1) {
+//       this.listcar.splice(foundprodutos, 1);
+//     } else {
+//       this.listcar[foundprodutos].quantity -= 1;
+//     }
+//   }
+//   console.log(this.listcar);
+// }
