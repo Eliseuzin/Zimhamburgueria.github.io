@@ -13,6 +13,7 @@ const Addresswarninput = document.getElementById("address-warn");
 const itensaddnocarrinho = document.getElementById("itensadd");
 const subbottom = document.getElementById("subbottom");
 const out = document.getElementById("out");
+const Finish = document.getElementById("Finish");
 
 var listcar = [];
 subbottom.style.display = "none";
@@ -125,7 +126,7 @@ function updatecarrinho() {
 
         </div>
 
-           <buttom class='removeritem' data-name=${item.name}>Remover</buttom>
+           <buttom class='removeritem' data-name="${item.name}">Remover</buttom>
       
     </div>`;
     total += item.price * item.quantity;
@@ -145,46 +146,43 @@ function updatecarrinho() {
 submeucarrinho.addEventListener("click", function (event) {
   if (event.target.classList.contains("removeritem")) {
     const name = event.target.getAttribute("data-name");
-    // console.log(name);
+    console.log(name);
     //chamar funçao
-    // removeritens(name);
-    // remove();
-    // remoitenscarrinho(name);
+    removeritens(name);
   }
 });
 
-// function remoitenscarrinho(name) {
-//   const checklistcarr = listcar.find((item) => item.name === name);
+function removeritens(name) {
+  const index = listcar.findIndex((item) => item.name === name);
 
-//   if (checklistcarr) {
-//     checklistcarr.quantity -= 1;
-//   } else {
-//     listcar.splice(checklistcarr);
-//   }
-// }
+  if (index !== -1) {
+    const item = listcar[index];
+    // console.log(item);
 
-// function removeritens(name) {
-//   const index = listcar.findIndex((item) => item.name === name);
+    if (item.quantity > 1) {
+      item.quantity -= 1;
+      updatecarrinho();
+      return;
+    } else {
+      listcar.splice(index, 1);
+      updatecarrinho();
+    }
+  }
+}
 
-//   if (index !== -1) {
-//     const item = listcar[index];
-//     console.log(item);
+Addressinput.addEventListener("input", function (event) {
+  var inputValue = event.target.value;
+  if (inputValue !== "") {
+    Addresswarninput.classList.add("none");
+  }
+});
 
-//     if (item.quantity > 1) {
-//       item.quantity -= 1;
-//       updatecarrinho();
-//     }
-//   }
-// }
+Finish.addEventListener("click", function () {
+  if (listcar.length === 0) return;
 
-// function remove(product) {
-//   const foundprodutos = this.getProductIndex(product);
-//   if (foundprodutos >= 0) {
-//     if (this.listcar[foundprodutos].quantity <= 1) {
-//       this.listcar.splice(foundprodutos, 1);
-//     } else {
-//       this.listcar[foundprodutos].quantity -= 1;
-//     }
-//   }
-//   console.log(this.listcar);
-// }
+  if (Addressinput.value === "") {
+    Addresswarninput.style.display = "block";
+    Addressinput.style.border = " solid 5px red ";
+    return;
+  }
+});
