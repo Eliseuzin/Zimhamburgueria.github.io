@@ -238,11 +238,12 @@ footer > button {
 }
 
 #address-warn {
-  color: rgb(36, 33, 33);
+  /* color: rgb(36, 33, 33); */
   background-color: rgba(255, 0, 0, 0.404);
   border-radius: 5px;
+  /* border: solid 2px red; */
   padding: 2px;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 #Fechar {
@@ -265,6 +266,23 @@ footer > button {
   display: flex;
   justify-content: space-between;
 }
+/* #error {
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px;
+  visibility: hidden;
+}
+#success {
+  text-align: center;
+  color: #00bb00;
+  background-color: #bbffbe;
+  padding: 10px;
+  border-radius: 5px;
+  visibility: hidden;
+} */
 
 .estilizarprodutos {
   /* background-color: pink; */

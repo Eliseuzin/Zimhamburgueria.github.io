@@ -14,6 +14,8 @@ const itensaddnocarrinho = document.getElementById("itensadd");
 const subbottom = document.getElementById("subbottom");
 const out = document.getElementById("out");
 const Finish = document.getElementById("Finish");
+// const error = document.getElementById("error");
+// const success = document.getElementById("success");
 
 var listcar = [];
 subbottom.style.display = "none";
@@ -173,7 +175,7 @@ function removeritens(name) {
 Addressinput.addEventListener("input", function (event) {
   var inputValue = event.target.value;
   if (inputValue !== "") {
-    Addresswarninput.classList.add("none");
+    // Addresswarninput.style.visibility = "hidden";
   }
 });
 
@@ -181,8 +183,12 @@ Finish.addEventListener("click", function () {
   if (listcar.length === 0) return;
 
   if (Addressinput.value === "") {
-    Addresswarninput.style.display = "block";
-    Addressinput.style.border = " solid 5px red ";
-    return;
+    // Addresswarninput.style.visibility = "visible";
   }
+  // if (Addressinput.value !== "") {
+  //   Addresswarninput.style.visibility = "hidden";
+  // }
+  // if (inputValue.length <4) {
+  //   Addresswarninput.style.visibility = "visible";
+  // }
 });
