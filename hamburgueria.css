@@ -243,7 +243,8 @@ footer > button {
   border-radius: 5px;
   /* border: solid 2px red; */
   padding: 2px;
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
 }
 
 #Fechar {

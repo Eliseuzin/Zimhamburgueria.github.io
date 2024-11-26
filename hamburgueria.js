@@ -19,23 +19,13 @@ const Finish = document.getElementById("Finish");
 
 var listcar = [];
 subbottom.style.display = "none";
-// const Meuccarrinho = Window.document.getElementById("meucarrinho");
-// const dentrodocarinho = Window.document.getElementById("submeucarrinho");
-// const Valortotal = Window.document.getElementById("valortotal");
-// const Fechar = Window.document.getElementById("Fechar");
-// const Finalizar = Window.document.getElementById("Finalizar");
-// const Quantidadecarinho = Window.document.getElementById("quantidadecarinho");
-// const Addressinput = Window.document.getElementById("address");
-// const Addresswarninput = Window.document.getElementById("address-warn");
 
 // abrir o carrinho
 
 Meucarrinho.addEventListener("click", function () {
-  // submeucarrinho.innerHTML= "";
   // updatecarrinho();
   dentrodocarrinho.style.display = "block";
   // updatecarrinho();
-  // subbottom.style.display = "none";
 });
 
 //fechar o carrinho, click fora
@@ -115,11 +105,6 @@ function updatecarrinho() {
     const incluirosprodutos = document.createElement("div");
     incluirosprodutos.setAttribute("class", "estilizarprodutos");
 
-    // incluirosprodutos.style.display = "flex";
-    // incluirosprodutos.style.justifyContent = "space between";
-    // incluirosprodutos.style.color = "red";
-    // incluirosprodutos.style.background = "black";
-
     incluirosprodutos.innerHTML = `<div>
         <div>
             <p>${item.name}</p>
@@ -178,17 +163,19 @@ Addressinput.addEventListener("input", function (event) {
     // Addresswarninput.style.visibility = "hidden";
   }
 });
-
 Finish.addEventListener("click", function () {
-  if (listcar.length === 0) return;
+  // if (listcar.length === 0) return;
 
-  if (Addressinput.value === "") {
-    // Addresswarninput.style.visibility = "visible";
+  if (Addressinput.value === "" || Addresswarninput.style.display === "none") {
+    Addresswarninput.style.display = "block";
+  } else if (
+    Addressinput.value !== "" ||
+    Addresswarninput.style.display === "block" ||
+    Addresswarninput.style.display === "none"
+  ) {
+    Addresswarninput.style.display = "none";
   }
-  // if (Addressinput.value !== "") {
-  //   Addresswarninput.style.visibility = "hidden";
-  // }
-  // if (inputValue.length <4) {
-  //   Addresswarninput.style.visibility = "visible";
+  // if (Addressinput.value.length >= 4) {
+  //   Addresswarninput.style.display = "none";
   // }
 });
