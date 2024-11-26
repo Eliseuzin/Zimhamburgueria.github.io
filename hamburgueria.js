@@ -159,23 +159,31 @@ function removeritens(name) {
 
 Addressinput.addEventListener("input", function (event) {
   var inputValue = event.target.value;
-  if (inputValue !== "") {
-    // Addresswarninput.style.visibility = "hidden";
-  }
-});
-Finish.addEventListener("click", function () {
-  // if (listcar.length === 0) return;
-
-  if (Addressinput.value === "" || Addresswarninput.style.display === "none") {
-    Addresswarninput.style.display = "block";
-  } else if (
-    Addressinput.value !== "" ||
-    Addresswarninput.style.display === "block" ||
-    Addresswarninput.style.display === "none"
-  ) {
-    Addresswarninput.style.display = "none";
-  }
-  // if (Addressinput.value.length >= 4) {
-  //   Addresswarninput.style.display = "none";
+  // if (inputValue !== "") {
+  //   Addresswarninput.style.visibility = "hidden";
   // }
+});
+
+Finish.addEventListener("click", function () {
+  if (listcar.length === 0) return;
+
+  // if (Addressinput.value === "") {
+  //   Addresswarninput.style.display = "block";
+  //   Addresswarninput.innerText = "O endereço está vazio!";
+  //   // return;
+  // } else if (Addressinput.value.length >= 4) {
+  //   Addresswarninput.style.visibility = "hidden";
+  //   return;
+  // } else {
+  //   Addresswarninput.innerText =
+  //     "O endereço precisa ter no minimo 4 caracteres";
+  // }
+  // if (Addressinput.value.length === "") return;
+
+  if (Addressinput.value.length >= 4) {
+    Addresswarninput.style.display = "none";
+    Addresswarninput.innerText = "tudo certo";
+    return;
+    // Addresswarninput.innerText = "O endereço está vazio!";
+  }
 });
