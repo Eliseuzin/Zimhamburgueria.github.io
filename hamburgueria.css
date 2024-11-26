@@ -231,6 +231,11 @@ footer > button {
   justify-content: space-between;
 }
 
+#addresss {
+  padding: 7px;
+  border-radius: 8px;
+  margin: 0%;
+}
 #address {
   padding: 7px;
   border-radius: 8px;
@@ -244,7 +249,7 @@ footer > button {
   /* border: solid 2px red; */
   padding: 2px;
   /* visibility: hidden; */
-  /* display: none; */
+  display: none;
 }
 
 #Fechar {

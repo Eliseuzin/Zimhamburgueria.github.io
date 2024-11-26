@@ -167,23 +167,16 @@ Addressinput.addEventListener("input", function (event) {
 Finish.addEventListener("click", function () {
   if (listcar.length === 0) return;
 
-  // if (Addressinput.value === "") {
-  //   Addresswarninput.style.display = "block";
-  //   Addresswarninput.innerText = "O endereço está vazio!";
-  //   // return;
-  // } else if (Addressinput.value.length >= 4) {
-  //   Addresswarninput.style.visibility = "hidden";
-  //   return;
-  // } else {
-  //   Addresswarninput.innerText =
-  //     "O endereço precisa ter no minimo 4 caracteres";
-  // }
-  // if (Addressinput.value.length === "") return;
-
-  if (Addressinput.value.length >= 4) {
-    Addresswarninput.style.display = "none";
-    Addresswarninput.innerText = "tudo certo";
+  if (Addressinput.value === "") {
+    Addresswarninput.style.display = "block";
+    Addresswarninput.innerText = "O endereço está vazio!";
     return;
-    // Addresswarninput.innerText = "O endereço está vazio!";
+  } else if (Addressinput.value.length <= 3) {
+    Addresswarninput.style.display = "block";
+    Addresswarninput.innerText =
+      "O endereço precisa ter no minimo 3 caracteres";
+    return;
+  } else {
+    Addresswarninput.style.display = "none";
   }
 });
