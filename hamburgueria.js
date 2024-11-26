@@ -165,6 +165,11 @@ Addressinput.addEventListener("input", function (event) {
 });
 
 Finish.addEventListener("click", function () {
+  const isOpen = verificaropen();
+  if (!isOpen) {
+    alert("Loja está fechada!");
+  }
+
   if (listcar.length === 0) return;
 
   if (Addressinput.value === "") {
@@ -179,4 +184,40 @@ Finish.addEventListener("click", function () {
   } else {
     Addresswarninput.style.display = "none";
   }
+
+  //ENVIAR PARA O WHATSAPP
+  // console.log(listcar);
+
+  const listcaritens = listcar
+    .map((item) => {
+      return `${item.name}, Quantidade:(${item.quantity}), Preço R$:(${item.price})|***|`;
+    })
+    .join("");
+
+  const messagem = encodeURIComponent(listcaritens);
+  const celular = "31994174975";
+  window.open(
+    `https://wa.me/${celular}?text=${messagem},Endereço:${Addressinput.value}`,
+    "_blank"
+  );
+  listcar.length = [];
+  updatecarrinho();
+  // console.log(listcaritens);
 });
+
+// FUNÇÃO PARA VERIFICAR SE A LOJA ESTA ABERTA OU FECHADA
+function verificaropen() {
+  const data = new Date();
+  const hora = data.getHours();
+  // const hora = 14;
+  return hora >= 18 && hora <= 23;
+}
+const spanhorario = document.getElementById("horario");
+const isOpen = verificaropen();
+if (isOpen) {
+  spanhorario.style.background = "green";
+  spanhorario.style.color = "antiquewhite";
+} else {
+  spanhorario.style.background = "red";
+  spanhorario.style.color = "antiquewhite";
+}
