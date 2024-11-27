@@ -167,7 +167,19 @@ Addressinput.addEventListener("input", function (event) {
 Finish.addEventListener("click", function () {
   const isOpen = verificaropen();
   if (!isOpen) {
-    alert("Loja está fechada!");
+    //importaçao mensagem loja fechada
+    Toastify({
+      text: "Desculpe, a pizzaria está fechada!",
+      duration: 3000,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "left", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+    }).showToast();
+    return;
   }
 
   if (listcar.length === 0) return;
@@ -208,8 +220,8 @@ Finish.addEventListener("click", function () {
 // FUNÇÃO PARA VERIFICAR SE A LOJA ESTA ABERTA OU FECHADA
 function verificaropen() {
   const data = new Date();
-  const hora = data.getHours();
-  // const hora = 14;
+  // const hora = data.getHours();
+  const hora = 14;
   return hora >= 18 && hora <= 23;
 }
 const spanhorario = document.getElementById("horario");
