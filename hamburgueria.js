@@ -220,9 +220,9 @@ Finish.addEventListener("click", function () {
 // FUNÇÃO PARA VERIFICAR SE A LOJA ESTA ABERTA OU FECHADA
 function verificaropen() {
   const data = new Date();
-  // const hora = data.getHours();
-  const hora = 14;
-  return hora >= 18 && hora <= 23;
+  const hora = data.getHours();
+  // const hora = 14;
+  return hora >= 17 && hora <= 23;
 }
 const spanhorario = document.getElementById("horario");
 const isOpen = verificaropen();
