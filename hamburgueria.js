@@ -113,7 +113,9 @@ function updatecarrinho() {
 
         </div>
 
-           <buttom class='removeritem' data-name="${item.name}">Remover</buttom>
+           <buttom  class='removeritem' data-name="${
+             item.name
+           }">Remover</buttom>
       
     </div>`;
     total += item.price * item.quantity;
