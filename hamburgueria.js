@@ -121,7 +121,7 @@ function updatecarrinho() {
   });
 
   //valor total do carrinho
-  Valortotal.textContent = `Total: ${total.toLocaleString("pt-BR", {
+  Valortotal.textContent = `Total a Pagar: ${total.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   })}`;
@@ -208,8 +208,9 @@ Finish.addEventListener("click", function () {
 
   const messagem = encodeURIComponent(listcaritens);
   const celular = "31994174975";
+
   window.open(
-    `https://wa.me/${celular}?text=${messagem},Endereço:${Addressinput.value}`,
+    `https://wa.me/${celular}?text=${messagem}, ${Valortotal.textContent}, Endereço:${Addressinput.value}`,
     "_blank"
   );
   listcar.length = [];
@@ -220,8 +221,8 @@ Finish.addEventListener("click", function () {
 // FUNÇÃO PARA VERIFICAR SE A LOJA ESTA ABERTA OU FECHADA
 function verificaropen() {
   const data = new Date();
-  const hora = data.getHours();
-  // const hora = 14;
+  // const hora = data.getHours();
+  const hora = 20;
   return hora >= 17 && hora <= 23;
 }
 const spanhorario = document.getElementById("horario");
@@ -233,3 +234,5 @@ if (isOpen) {
   spanhorario.style.background = "red";
   spanhorario.style.color = "antiquewhite";
 }
+
+console.log(Valortotal);
