@@ -224,8 +224,8 @@ Finish.addEventListener("click", function () {
 function verificaropen() {
   const data = new Date();
   // const hora = data.getHours();
-  const hora = 20;
-  return hora >= 17 && hora <= 23;
+  const hora = 5;
+  return hora >= 1 && hora <= 23;
 }
 const spanhorario = document.getElementById("horario");
 const isOpen = verificaropen();
