@@ -176,13 +176,13 @@ Finish.addEventListener("click", function () {
     //importaçao mensagem loja fechada
     Toastify({
       text: "Desculpe, a pizzaria está fechada!",
-      duration: 3000,
+      duration: 4000,
       close: true,
       gravity: "top", // `top` or `bottom`
       position: "left", // `left`, `center` or `right`
       stopOnFocus: true, // Prevents dismissing of toast on hover
       style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        background: "linear-gradient(to right,rgba(255, 0, 0, 0.13),rgb(255, 0, 0))",
       },
     }).showToast();
     return;
