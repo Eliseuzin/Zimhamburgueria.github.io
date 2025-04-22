@@ -9,7 +9,11 @@ const Fechar = document.getElementById("Fechar");
 const Finalizar = document.getElementById("Finalizar");
 const Quantidadecarinho = document.getElementById("quantidadecarinho");
 const Addressinput = document.getElementById("address");
+const addressnome=document.getElementById("addressnome")
+const addressphone=document.getElementById("addressphone");
 const Addresswarninput = document.getElementById("address-warn");
+const Addresswarninputnome = document.getElementById("address-warnnome");
+const Addresswarninputphone = document.getElementById("address-warnphone");
 const itensaddnocarrinho = document.getElementById("itensadd");
 const subbottom = document.getElementById("subbottom");
 const out = document.getElementById("out");
@@ -199,6 +203,36 @@ Finish.addEventListener("click", function () {
     Addresswarninput.style.display = "none";
   }
 
+  if(addressnome.value===""){
+    Addresswarninputnome.style.display="block"
+    Addresswarninputnome.innerText="Um nome valido, por favor!!!"
+    return;
+  }else if(addressnome.value.length<=3){
+    Addresswarninputnome.style.display="block"
+    Addresswarninputnome.innerText="Nome precisa ter mais de 3 caracteres! "
+    return;
+  }else{
+    Addresswarninputnome.style.display="none"
+  }
+  if(addressphone.value===""){
+    Addresswarninputphone.style.display="block"
+    Addresswarninputphone.innerText="Um numero valido, por favor!!!"
+    return;
+  } 
+  else if (addressphone.value.length<=10){
+    Addresswarninputphone.style.display="block"
+    Addresswarninputphone.innerText="Precisa ter 11 numeros "
+    Addresswarninputphone.innerText="Ex.:31999990000 "
+    return;
+  }else if (addressphone.value.length>11){
+    Addresswarninputphone.style.display="block"
+    Addresswarninputphone.innerText="Precisa ter 11 numeros "
+    return;
+  }else{
+    Addresswarninputphone.style.display="none"
+  }
+
+
   //ENVIAR PARA O WHATSAPP
   // console.log(listcar);
 
@@ -212,7 +246,7 @@ Finish.addEventListener("click", function () {
   const celular = "31994174975";
 
   window.open(
-    `https://wa.me/${celular}?text=${messagem}, ${Valortotal.textContent}, Endereço:${Addressinput.value}`,
+    `https://wa.me/${celular}?text=${messagem}, ${Valortotal.textContent},// Nome: ${addressnome.value},// Endereço: ${Addressinput.value},// Celular: ${addressphone.value}`,
     "_blank"
   );
   listcar.length = [];
@@ -220,11 +254,15 @@ Finish.addEventListener("click", function () {
   // console.log(listcaritens);
 });
 
+// Addresswarninputnome.addEventListener('keyup',() =>{
+// const AddresswarninputnomeValue=Addresswarninputnome.value;
+// })
+
 // FUNÇÃO PARA VERIFICAR SE A LOJA ESTA ABERTA OU FECHADA
 function verificaropen() {
   const data = new Date();
-  // const hora = data.getHours();
-  const hora = 5;
+  const hora = data.getHours();
+  // const hora = 5;
   return hora >= 1 && hora <= 23;
 }
 const spanhorario = document.getElementById("horario");

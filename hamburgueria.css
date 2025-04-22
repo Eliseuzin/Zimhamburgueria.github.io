@@ -238,9 +238,16 @@ footer > button {
   margin: 0%;
 }
 #address {
-  padding: 7px;
+  padding: 5px;
   border-radius: 8px;
-  margin: 0%;
+}
+#addressphone{
+  padding: 5px;
+  border-radius: 8px;
+}
+#addressnome{
+  padding: 5px;
+  border-radius: 8px;
 }
 
 #address-warn {
@@ -252,7 +259,7 @@ footer > button {
   /* visibility: hidden; */
   display: none;
 }
-#address-warn1 {
+#address-warnnome {
   /* color: rgb(36, 33, 33); */
   background-color: rgba(255, 0, 0, 0.404);
   border-radius: 5px;
@@ -261,7 +268,7 @@ footer > button {
   /* visibility: hidden; */
   display: none;
 }
-#address-warn2 {
+#address-warnphone {
   /* color: rgb(36, 33, 33); */
   background-color: rgba(255, 0, 0, 0.404);
   border-radius: 5px;
