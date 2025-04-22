@@ -252,6 +252,24 @@ footer > button {
   /* visibility: hidden; */
   display: none;
 }
+#address-warn1 {
+  /* color: rgb(36, 33, 33); */
+  background-color: rgba(255, 0, 0, 0.404);
+  border-radius: 5px;
+  /* border: solid 2px red; */
+  padding: 2px;
+  /* visibility: hidden; */
+  display: none;
+}
+#address-warn2 {
+  /* color: rgb(36, 33, 33); */
+  background-color: rgba(255, 0, 0, 0.404);
+  border-radius: 5px;
+  /* border: solid 2px red; */
+  padding: 2px;
+  /* visibility: hidden; */
+  display: none;
+}
 
 #Fechar {
   border-radius: 5px;
